@@ -17,7 +17,7 @@ def create_plot(x_fine, y_clean_fine, x_nodes, y_noisy, polynomials, rmse_values
     degrees = [1, 2, 3]
     colors = ['red', 'green', 'blue']
     
-    plt.figure(figsize=(12, 8))
+    plt.figure(figsize=(14, 8))
     
     # og krzywa sin(2πx)
     plt.plot(x_fine, y_clean_fine, 'k-', linewidth=2, label='Oryginalna: y = sin(2πx)', alpha=0.7)
@@ -56,6 +56,7 @@ def main():
     # dane z szumem
     sigma = 0.12
     y_noisy = generate_noisy_data(x_nodes, sigma)
+    # do rmse
     y_clean_nodes = generate_clean_data(x_nodes)
     
 

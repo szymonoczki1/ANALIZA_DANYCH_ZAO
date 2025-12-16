@@ -9,7 +9,7 @@ def create_hilbert_matrix(n):
     return H
 
 def main():
-    n = 10
+    n = 20
     
     A = create_hilbert_matrix(n)
     print(f"Macierz Hilberta {n}×{n}:")
@@ -64,7 +64,7 @@ def main():
     print(f"  inv:    {residuum3}")
     print()
     
-    # Wskaźnik uwarunkowania
+    # wskaźnik uwarunkowania
     cond_A = np.linalg.cond(A)
     print(f"Wskaźnik uwarunkowania macierzy cond(A): {cond_A:.2e}")
     print()
