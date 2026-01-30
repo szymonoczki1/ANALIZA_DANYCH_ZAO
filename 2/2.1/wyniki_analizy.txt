@@ -1,0 +1,15 @@
+WYNIKI ANALIZY REGRESJI
+============================================================
+
+Parametry modelu:
+  Slope: 4.9497
+  Intercept: 49.1735
+
+Metryki (zbiór testowy):
+  MSE: 32.1661
+  R²: 0.9827
+
+Interpretacja:
+  Wzrost temperatury o 1°C zwiększa sprzedaż o 4.95 gałek.
+  Model wyjaśnia 98.3% zmienności sprzedaży.
+  Model jest sensowny - temperatura jest dobrym predyktorem sprzedaży lodów.
