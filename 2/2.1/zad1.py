@@ -68,7 +68,11 @@ print(f"  Wyraz wolny (intercept): {intercept:.4f}")
 y_pred_test = model.predict(X_test)
 
 # na ich podstawie liczymy MSE i R^2
+
+# mse -> 1/n * suma((y_true - y_pred)^2)
 mse = mean_squared_error(y_test, y_pred_test)
+
+# r2 -> 1 - suma((y_true - y_pred)^2) / suma((y_true - y_mean)^2)
 r2 = r2_score(y_test, y_pred_test)
 
 print(f"\nMetryki na zbiorze testowym:")

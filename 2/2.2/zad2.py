@@ -74,10 +74,14 @@ print(f"age: wzrost o 1 rok zmienia zużycie o {coefficients[3]:.4f} kWh")
 # np jak area po standaryzacji bedzie miala wspolczynnik 39.5 to znaczy ze wzrost o 1 std dev area zwieksza zuzycie o 39.5 kWh
 # gdzie std dev to jak bardzo dane area sa rozproszone wokol sredniej, w taki sam sposob jak dla innych cech
 scaler = StandardScaler()
+
+# fit oblicza srednia i std dev na danych treningowych
+# transform przeksztalca dane tak zeby srednia = 0 a std dev = 1 -> wariancja = std dev^2 == 1
 X_train_scaled = scaler.fit_transform(X_train)
 X_test_scaled = scaler.transform(X_test)
 
 model_scaled = LinearRegression()
+# fit dopasowuje model na standaryzowanych danych treningowych
 model_scaled.fit(X_train_scaled, y_train)
 
 coefficients_scaled = model_scaled.coef_

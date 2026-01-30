@@ -18,6 +18,8 @@ X_scaled = scaler.fit_transform(X)
 # 3. Klastrowanie k-średnich
 # mozemy zwiekszyc n_init w celu uzyskania lepszych wynikow
 kmeans = KMeans(n_clusters=3, random_state=42, n_init=10)
+# fit tworzy centroidy jako srednie punktow
+# predict przypisuje kazdy punkt do najblizszego centroidu
 cluster_labels = kmeans.fit_predict(X_scaled)
 
 # 4. Centra klastrów w oryginalnych jednostkach
@@ -74,6 +76,7 @@ print(f"WSS (skala znormalizowana): {wss_scaled:.2f}")
 
 # 7. k-NN - Przypisanie nowego klienta
 knn = KNeighborsClassifier(n_neighbors=5)
+# trenujemy klasyfikator
 knn.fit(X_scaled, cluster_labels)
 
 new_customer = {
